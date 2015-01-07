@@ -6,3 +6,8 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+
+
+package node['pgpool']['package_name'] do
+  action :install
+end
