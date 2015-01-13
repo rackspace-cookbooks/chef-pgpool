@@ -10,3 +10,11 @@
 package node['pgpool']['package_name'] do
   action :install
 end
+
+%w(pgpool pcp pool_hba).each do |f|
+  template "#{node['pgpool']['dir']}/#{f}.conf" do
+    owner 'root'
+    group 'root'
+    mode 0644
+  end
+end
