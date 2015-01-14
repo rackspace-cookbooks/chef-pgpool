@@ -1,9 +1,7 @@
 pgpool-cookbook Cookbook
 ========================
-TODO: Enter the cookbook description here.
 
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+pgpool-II cookbook utilizing hba by default
 
 Requirements
 ------------
