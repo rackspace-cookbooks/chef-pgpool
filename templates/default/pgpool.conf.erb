@@ -1,5 +1,5 @@
 <% node['pgpool']['pgconf'].each do |k, v| -%>
   <% unless v.empty? -%>
-    <%= k %> = <%= v %>
+<%= k.ljust(25) %> = <%= v %>
   <% end %>
 <% end %>

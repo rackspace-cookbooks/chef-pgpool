@@ -26,6 +26,6 @@ default['pgpool']['pgconf']['replication_mode'] = 'false'
 default['pgpool']['pgconf']['load_balance_mode'] = 'false'
 
 default['pgpool']['pg_hba']['auth'] = [
-  {:type => 'local', :db => 'all', :user => 'all', :addr => nil, :method => 'trust'},
-  {:type => 'host', :db => 'all', :user => 'all', :addr => '127.0.0.1/32', :method => 'trust'}
+  { type: 'local', db: 'all', user: 'all', addr: nil, method: 'trust' },
+  { type: 'host', db: 'all', user: 'all', addr: '127.0.0.1/32', method: 'trust' }
 ]
