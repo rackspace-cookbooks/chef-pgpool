@@ -1,21 +1,9 @@
 pgpool-cookbook Cookbook
 ========================
-
-pgpool-II cookbook utilizing hba by default
-
-Requirements
-------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
-
-e.g.
-#### packages
-- `toaster` - pgpool-cookbook needs toaster to brown your bagel.
+Installs and configures PGPool
 
 Attributes
 ----------
-TODO: List your cookbook attributes here.
-
-e.g.
 #### pgpool-cookbook::default
 <table>
   <tr>
@@ -25,19 +13,28 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['pgpool-cookbook']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['pgpool']['pgconf']['listen_address']</tt></td>
+    <td>String</td>
+    <td>listen address</td>
+    <td><tt>localhost</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['pgpool']['pgconf']['port']</tt></td>
+    <td>String</td>
+    <td>bind port</td>
+    <td><tt>9999</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['pgpool']['pgconf']['logdir']</tt></td>
+    <td>String</td>
+    <td>log directory</td>
+    <td><tt>/var/log/pgpool</tt></td>
   </tr>
 </table>
 
 Usage
 -----
 #### pgpool-cookbook::default
-TODO: Write usage instructions for each cookbook.
-
-e.g.
 Just include `pgpool-cookbook` in your node's `run_list`:
 
 ```json
@@ -51,9 +48,6 @@ Just include `pgpool-cookbook` in your node's `run_list`:
 
 Contributing
 ------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
-
-e.g.
 1. Fork the repository on Github
 2. Create a named feature branch (like `add_component_x`)
 3. Write your change
@@ -63,4 +57,4 @@ e.g.
 
 License and Authors
 -------------------
-Authors: TODO: List authors
+- Author:: Jens Jorritsma(jens.jorritsma@rackspace.com)
