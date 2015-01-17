@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: pgpool-cookbook
+# Cookbook Name:: pgpool
 # Recipe:: default
 #
 # Copyright 2015, YOUR_COMPANY_NAME

@@ -1,10 +1,10 @@
-pgpool-cookbook Cookbook
+pgpool Cookbook
 ========================
 Installs and configures PGPool
 
 Attributes
 ----------
-#### pgpool-cookbook::default
+#### pgpool::default
 <table>
   <tr>
     <th>Key</th>
@@ -34,14 +34,14 @@ Attributes
 
 Usage
 -----
-#### pgpool-cookbook::default
-Just include `pgpool-cookbook` in your node's `run_list`:
+#### pgpool::default
+Just include `pgpool` in your node's `run_list`:
 
 ```json
 {
   "name":"my_node",
   "run_list": [
-    "recipe[pgpool-cookbook]"
+    "recipe[pgpool]"
   ]
 }
 ```
