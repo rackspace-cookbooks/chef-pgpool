@@ -16,5 +16,24 @@ end
     owner 'root'
     group 'root'
     mode 0644
+    notifies :restart, 'service[pgpool]', :delayed
   end
+end
+
+%w(
+  logdir
+  socket_dir
+  pcp_socket_dir
+).each do |dir|
+  directory node['pgpool']['pgconf'][dir] do
+    action :create
+    owner node['pgpool']['user']
+    group node['pgpool']['group']
+    mode 0755
+  end
+end
+
+service 'pgpool' do
+  service_name node['pgpool']['service']
+  action [ :enable, :start ]
 end
