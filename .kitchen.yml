@@ -19,5 +19,5 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[pgpool-cookbook::default]
+      - recipe[pgpool::default]
     attributes:
