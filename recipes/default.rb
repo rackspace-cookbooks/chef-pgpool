@@ -11,6 +11,15 @@ package node['pgpool']['config']['package_name'] do
   action :install
 end
 
+group node['pgpool']['group'] do
+  action :create
+end
+
+user node['pgpool']['user'] do
+  action :create
+  gid node['pgpool']['group']
+end
+
 %w(pgpool pcp pool_hba).each do |f|
   template "#{node['pgpool']['config']['dir']}/#{f}.conf" do
     owner 'root'
