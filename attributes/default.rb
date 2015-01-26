@@ -13,11 +13,18 @@ when 'centos'
 end
 
 default['pgpool']['pgconf']['listen_addresses'] = 'localhost'
-default['pgpool']['pgconf']['port'] = 9999
+default['pgpool']['pgconf']['port'] = 5432
+default['pgpool']['pgconf']['pcp_port'] = 9898
+default['pgpool']['pgconf']['pool_password'] = 'pool_passwd'
 default['pgpool']['pgconf']['socket_dir'] = '/var/run/pgpool'
 default['pgpool']['pgconf']['pcp_socket_dir'] = '/var/run/pgpool'
+default['pgpool']['pgconf']['max_pool'] = 4
 default['pgpool']['pgconf']['num_init_children'] = 32
-default['pgpool']['pgconf']['enable_pool_hba'] = true
+default['pgpool']['pgconf']['child_life_time'] = 300
+default['pgpool']['pgconf']['child_max_connections'] = 0
+default['pgpool']['pgconf']['connection_life_time'] = 0
+default['pgpool']['pgconf']['client_idle_limit'] = 0
+default['pgpool']['pgconf']['enable_pool_hba'] = false
 default['pgpool']['pgconf']['logdir'] = '/var/log/pgpool'
 default['pgpool']['pgconf']['connect_timeout'] = 10000
 default['pgpool']['pgconf']['backend_hostname0'] = ''
