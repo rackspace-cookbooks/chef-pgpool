@@ -1,6 +1,12 @@
 pgpool Cookbook CHANGELOG
 =========================
 
+0.2.0
+-----
+- Jim Rosser - Added some extra pgpool default attributes, switched off pgpool hba
+- Jim Rosser - Create a postgres user and group (Fixes issues with CentOS)
+- Jim Rosser - Added the Postgresql service and directories needed by the service
+
 0.1.2
 -----
 - Jens Jorritsma - Handle all types of config options
