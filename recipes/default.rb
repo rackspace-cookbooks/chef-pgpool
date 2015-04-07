@@ -26,6 +26,11 @@ end
     notifies :restart, 'service[pgpool]', :delayed
   end
 end
+file "#{node['pgpool']['config']['dir']}/pool_passwd" do
+owner node['pgpool']['user']
+group node['pgpool']['group']
+action :create
+end
 
 %w(
   logdir
