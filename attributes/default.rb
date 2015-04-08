@@ -3,7 +3,7 @@ default['pgpool']['group'] = 'postgres'
 
 case node['platform']
 when 'debian', 'ubuntu'
-  default['pgpool']['config']['package_name'] = 'pgpool-II-pg93' # Might override
+  default['pgpool']['config']['package_name'] = 'pgpool2' # May want to override
   default['pgpool']['config']['dir'] = '/etc/pgpool2'
   default['pgpool']['service'] = 'pgpool2'
 when 'centos'
