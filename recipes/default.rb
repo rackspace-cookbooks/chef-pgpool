@@ -6,7 +6,6 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-
 package node['pgpool']['config']['package_name'] do
   action :install
 end
@@ -19,7 +18,6 @@ user node['pgpool']['user'] do
   action :create
   gid node['pgpool']['group']
 end
-
 %w(pgpool pcp pool_hba).each do |f|
   template "#{node['pgpool']['config']['dir']}/#{f}.conf" do
     owner 'root'
@@ -27,6 +25,11 @@ end
     mode 0644
     notifies :restart, 'service[pgpool]', :delayed
   end
+end
+file "#{node['pgpool']['config']['dir']}/pool_passwd" do
+owner node['pgpool']['user']
+group node['pgpool']['group']
+action :create
 end
 
 %w(

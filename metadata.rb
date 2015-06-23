@@ -1,5 +1,5 @@
 name             'pgpool'
-maintainer       'Jens Jorritsma'
+maintainer 'Jens Jorritsma'
 maintainer_email 'jens.jorritsma@gamil.com'
 license          'Apache 2'
 description      'Installs/Configures pgpool'
