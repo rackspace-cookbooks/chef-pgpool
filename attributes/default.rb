@@ -7,10 +7,10 @@ when 'debian', 'ubuntu'
   default['pgpool']['config']['dir'] = '/etc/pgpool2'
   default['pgpool']['service'] = 'pgpool2'
 when 'centos'
-# Old default package name was installing an ancient Pgpool version. As such,
-# increment the default here such that it installs the version meant for
-# Postgres-9.3.x, regardless this is overrideable like any other attribute.
-default['pgpool']['config']['package_name'] = 'pgpool-II-pg93'
+  # Old default package name was installing an ancient Pgpool version. As such,
+  # increment the default here such that it installs the version meant for
+  # Postgres-9.3.x, regardless this is overrideable like any other attribute.
+  default['pgpool']['config']['package_name'] = 'pgpool-II-pg93'
   default['pgpool']['config']['dir'] = '/etc/pgpool-II'
   default['pgpool']['service'] = 'pgpool'
 end
@@ -30,7 +30,7 @@ default['pgpool']['pgconf']['client_idle_limit'] = 0
 default['pgpool']['pgconf']['enable_pool_hba'] = false # Might want to override
 # this if the use case includes authentication by Pgpool (recommended).
 default['pgpool']['pgconf']['logdir'] = '/var/log/pgpool'
-default['pgpool']['pgconf']['connect_timeout'] = 10000
+default['pgpool']['pgconf']['connect_timeout'] = 10_000
 default['pgpool']['pgconf']['backend_hostname0'] = '' # Should override
 default['pgpool']['pgconf']['backend_hostname1'] = '' # Should override
 default['pgpool']['pgconf']['backend_port0'] = 5432
@@ -71,7 +71,7 @@ default['pgpool']['pgconf']['master_slave_sub_mode'] = 'stream'
 default['pgpool']['pgconf']['sr_check_period'] = 10
 default['pgpool']['pgconf']['sr_check_user'] = 'pgpool' # Should override
 default['pgpool']['pgconf']['sr_check_password'] = 'pgpool' # Should override
-default['pgpool']['pgconf']['delay_threshold'] = 10000000
+default['pgpool']['pgconf']['delay_threshold'] = 10_000_000
 default['pgpool']['pgconf']['follow_master_command'] = '' # Might want to override
 default['pgpool']['pgconf']['parallel_mode'] = false
 default['pgpool']['pgconf']['health_check_period'] = 0
