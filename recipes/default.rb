@@ -18,6 +18,7 @@ user node['pgpool']['user'] do
   action :create
   gid node['pgpool']['group']
 end
+
 %w(pgpool pcp pool_hba).each do |f|
   template "#{node['pgpool']['config']['dir']}/#{f}.conf" do
     owner 'root'
@@ -26,10 +27,11 @@ end
     notifies :restart, 'service[pgpool]', :delayed
   end
 end
+
 file "#{node['pgpool']['config']['dir']}/pool_passwd" do
-owner node['pgpool']['user']
-group node['pgpool']['group']
-action :create
+  owner node['pgpool']['user']
+  group node['pgpool']['group']
+  action :create
 end
 
 %w(
@@ -47,5 +49,5 @@ end
 
 service 'pgpool' do
   service_name node['pgpool']['service']
-  action [ :enable, :start ]
+  action [:enable, :start]
 end
