@@ -1,6 +1,12 @@
 pgpool Cookbook CHANGELOG
 =========================
 
+0.3.0
+-----
+- Igor Gueths - Changed package name for Debian/Ubuntu
+- Igor Gueths - Fixed permissions issue on pool_passwd
+- Jim Rosser - Added rubocop.yml and fixed syntax issues
+
 0.2.0
 -----
 - Jim Rosser - Added some extra pgpool default attributes, switched off pgpool hba
